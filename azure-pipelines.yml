@@ -25,6 +25,7 @@ stages:
       inputs:
         command: build
         dockerfile: '$(Build.SourcesDirectory)/.docker/development/app/Dockerfile'
+        buildContext: '$(Build.SourcesDirectory)'
         tags: |
           $(tag)
         arguments: '--build-arg RUBY_VERSION=2.6.3 --build-arg BUNDLER_VERSION=2.0.2 --build-arg NODE_MAJOR=11 --build-arg YARN_VERSION=1.17.3'
