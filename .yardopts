@@ -1,0 +1,7 @@
+--title "EDI Journal Database"
+--exclude README.md
+-r documentation/PROJECT.md
+app/**/*.rb
+lib/**/*.rb
+-
+documentation/PROJECT.md

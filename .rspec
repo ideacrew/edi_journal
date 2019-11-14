@@ -1,1 +1,4 @@
---require spec_helper
+--require rails_helper
+--format progress
+--format RspecJunitFormatter
+--out test_reports/junit_formatter/rspec_results/rspec.xml

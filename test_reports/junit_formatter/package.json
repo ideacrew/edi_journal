@@ -1,0 +1,15 @@
+{
+  "name": "test_reports",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "rspec-report": "node xunit_viewer_rspec.js"
+  },
+  "author": "",
+  "license": "ISC",
+  "devDependencies": {},
+  "dependencies": {
+    "xunit-viewer": "^5.1.11"
+  }
+}

@@ -1,0 +1,11 @@
+AllCops:
+  TargetRubyVersion: 2.6
+  Exclude:
+    - './bin/**/*'
+    - './node_modules/**/*'
+
+Metrics/LineLength:
+  Max: 120
+
+Style/StringLiterals:
+  Enabled: false

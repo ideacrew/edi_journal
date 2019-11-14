@@ -1,12 +1,22 @@
 # This file is copied to spec/ when you run 'rails generate rspec:install'
-require 'spec_helper'
 ENV['RAILS_ENV'] ||= 'test'
+if ENV["COVERAGE"]
+  require 'simplecov'
+  require 'simplecov-cobertura'
+  SimpleCov.formatters = SimpleCov::Formatter::MultiFormatter.new([
+    SimpleCov::Formatter::HTMLFormatter,
+    SimpleCov::Formatter::CoberturaFormatter
+  ])
+  SimpleCov.start 'rails'
+end
+require 'spec_helper'
 
 require File.expand_path('../config/environment', __dir__)
 
 # Prevent database truncation if the environment is production
 abort("The Rails environment is running in production mode!") if Rails.env.production?
 require 'rspec/rails'
+require "database_cleaner"
 # Add additional requires below this line. Rails is not loaded until this point!
 
 # Requires supporting ruby files with custom matchers and macros, etc, in
@@ -39,7 +49,8 @@ RSpec.configure do |config|
   # The different available types are documented in the features, such as in
   # https://relishapp.com/rspec/rspec-rails/docs
 
-    DatabaseCleaner[:mongoid].strategy = :truncation, {:except => %w[translations]}
+
+  DatabaseCleaner[:mongoid].strategy = :truncation, {:except => %w[translations]}
 
   config.after(:example, :dbclean => :after_each) do
     DatabaseCleaner.clean
@@ -50,7 +61,7 @@ RSpec.configure do |config|
     example.run
     DatabaseCleaner.clean
   end
-  
+
   config.infer_spec_type_from_file_location!
 
   # Filter lines from Rails gems in backtraces.

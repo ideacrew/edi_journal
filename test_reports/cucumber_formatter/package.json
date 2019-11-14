@@ -1,0 +1,15 @@
+{
+  "name": "cucumber_report",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "cucumber-report": "node cucumber_report.js"
+  },
+  "author": "",
+  "license": "ISC",
+  "devDependencies": {},
+  "dependencies": {
+    "cucumber-html-reporter": "^5.0.2"
+  }
+}

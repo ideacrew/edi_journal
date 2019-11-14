@@ -23,6 +23,7 @@ gem 'bootsnap', '>= 1.4.2', require: false
 
 gem 'pundit',   '~> 2.1.0'
 gem 'mongoid',  '>= 7.0.5'
+gem 'database_cleaner'
 
 group :development, :test do
   # Call 'byebug' anywhere in the code to stop execution and get a debugger console
@@ -33,7 +34,20 @@ group :development, :test do
   gem 'climate_control' #
   gem 'factory_bot_rails',      '~> 4.11'
   gem 'pry-byebug'
+  gem 'rubocop'
+  gem 'rubocop-rspec'
+  gem 'rubocop-git'
+end
+
+group :test do
+  gem 'rspec_junit_formatter'
+  gem 'simplecov', require: false
+  gem 'simplecov-cobertura'
+  gem 'cucumber'
+  gem 'cucumber-rails', require: false
   gem 'capybara'
+  gem 'capybara-screenshot'
+  gem 'webdrivers'
 end
 
 group :development do
@@ -43,10 +57,6 @@ group :development do
   # Spring speeds up development by keeping your application running in the background. Read more: https://github.com/rails/spring
   gem 'spring'
   gem 'spring-watcher-listen', '~> 2.0.0'
-
-  gem 'rubocop',                require: false
-  gem 'rubocop-rspec'
-  gem 'rubocop-git'
 end
 
 # Windows does not include zoneinfo files, so bundle the tzinfo-data gem
