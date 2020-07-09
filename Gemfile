@@ -31,7 +31,7 @@ group :development, :test do
   gem 'rspec-rails', '~> 3.8'
   gem 'yard' #,                   '~> 0.9.12',  require: false
   gem 'climate_control' #
-  gem 'factory_bot_rails',      '~> 4.11'
+  gem 'factory_bot_rails',      '~> 6.1'
   gem 'pry-byebug'
   gem 'capybara'
 end
